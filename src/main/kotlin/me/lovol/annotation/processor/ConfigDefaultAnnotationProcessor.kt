@@ -35,11 +35,11 @@ class ConfigDefaultAnnotationProcessor : AbstractProcessor() {
 
         val configMain = roundEnv.getElementsAnnotatedWith(ConfigDefaultMain::class.java)
         if (configMain.isEmpty()) {
-            //processingEnv.logError("找不到@ConfigDefaultMain")
+            //processingEnv.logInfo("找不到@ConfigDefaultMain")
             return false
         }
         if (configMain.size > 1) {
-            processingEnv.logError("@ConfigDefaultMain，全局只能存在一个")
+            processingEnv.logInfo("@ConfigDefaultMain，全局只能存在一个")
             return false
         }
         configMain.forEach {

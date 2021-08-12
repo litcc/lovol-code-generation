@@ -38,6 +38,7 @@ fun Element.toTypeElementOrNull(): TypeElement? {
     return this
 }
 
+
 fun Element.toVariableElementOrNull(): VariableElement? {
     if (this !is VariableElement) {
         return null

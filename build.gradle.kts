@@ -19,9 +19,12 @@ dependencies {
     val junitJupiterVersion: String by project
 
     implementation(kotlin("stdlib"))
+    implementation(kotlin("stdlib-jdk8"))
+    implementation(kotlin("stdlib-jdk7"))
+    implementation(kotlin("reflect"))
 //    implementation("io.vertx:vertx-core:$vertxVersion")
 //    implementation("io.vertx:vertx-lang-kotlin:$vertxVersion")
-    implementation("com.squareup:kotlinpoet:1.8.0")
+    implementation("com.squareup:kotlinpoet:1.9.0")
 
 
 
@@ -42,3 +45,7 @@ tasks.withType<KotlinCompile> {
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
 }
+
+//tasks.withType<JavaCompile> {
+//    options.fork(mapOf(Pair("jvmArgs", listOf("--add-opens", "jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED"))))
+//}
